@@ -1,0 +1,10 @@
+name: Testing-workflow
+on: issues
+jobs:
+    my-issue-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Checkout the code"
+          uses: actions/checkout@v6
+        - name: "Getting the github context"
+          run: echo "Context check ${{ toJson(github.event) }}"
